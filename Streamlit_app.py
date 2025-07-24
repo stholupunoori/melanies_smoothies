@@ -53,7 +53,7 @@ if ingredients_list:
     ingredients_string += fruit_chosen + ''
     st.subheader(fruit_chosen + ' Nutrition Information')
     smoothiefroot_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
-    my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME')),select(col('SEARCH_ON'))
+    my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
     st.dataframe(data=my_dataframe,use_container_width=True)
     st.stop()
     ingredients_list = st.multiselect()
